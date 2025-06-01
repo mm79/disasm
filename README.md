@@ -1,4 +1,5 @@
-mmdisasm is a simple disassembler  (currently for x86 32-bit, 64-bit, and ARM64) that includes basic uses of nm, hexdump, and objdump.
+mmdisasm is a simple disassembler that uses the Capstone framework to disassemble x86 (32-bit and 64-bit) and ARM64 code
+and includes basic functionality from nm, hexdump and objdump
 
 ## hexdump
 
