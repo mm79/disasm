@@ -1,0 +1,9 @@
+[package]
+name = "mmdisasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+capstone = "0.13"
+object = "0.36"
+getopt = "1.1.9"
