@@ -48,7 +48,7 @@ impl Config {
 
     fn usage() {
         println!(
-            "Usage: mmdisasm -f filename [-s] [-S sectioname] [-d] [-a]
+            "Usage: disasm -f filename [-s] [-S sectioname] [-d] [-a]
 		 -f filename -> file to open
 		 -n -> show symbols
 		 -s -> show section names
