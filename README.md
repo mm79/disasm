@@ -1,10 +1,10 @@
-mmdisasm is a simple disassembler that uses the Capstone framework to disassemble x86 (32-bit and 64-bit) and ARM64 code
+disasm is a simple disassembler that uses the Capstone framework to disassemble x86 (32-bit and 64-bit) and ARM64 code
 and includes basic functionality from nm, hexdump and objdump
 
 ## hexdump
 
 ```bash
-matteo@rust$ ./mmdisasm -f /etc/profile
+matteo@rust$ ./disasm -f /etc/profile
 00000000: 23 20 2f 65 74 63 2f 70 72 6f 66 69 6c 65 3a |# /etc/profile:|
 0000000f: 20 73 79 73 74 65 6d 2d 77 69 64 65 20 2e 70 | system-wide .p|
 0000001e: 72 6f 66 69 6c 65 20 66 69 6c 65 20 66 6f 72 |rofile file for|
@@ -21,7 +21,7 @@ matteo@rust$ ./mmdisasm -f /etc/profile
 ## disassemble a binary file (ELF, Mach-O)
 
 ```bash
-matteo@rust$ ./mmdisasm -f /tmp/a.out -d 
+matteo@rust$ ./disasm -f /tmp/a.out -d 
 Disassembling '.text' section [Arch: X86_64]
 
 0x00001050 <_start>:
@@ -45,7 +45,7 @@ Disassembling '.text' section [Arch: X86_64]
 
 AT&T syntax for x86:
 ```bash
-matteo@rust$ ./mmdisasm -f /tmp/a.out -d -a
+matteo@rust$ ./disasm -f /tmp/a.out -d -a
 Disassembling '.init' section [Arch: X86_64]
 
 0x00001000 <_init>:
@@ -73,7 +73,7 @@ Disassembling '.plt.got' section [Arch: X86_64]
 
 ##  nm
 ```bash
-matteo@rust$ ./mdisasm -f /tmp/a.out -n
+matteo@rust$ ./disasm -f /tmp/a.out -n
 0000000000000000 Scrt1.o
 000000000000037c __abi_tag
 0000000000000000 crtstuff.c
@@ -111,9 +111,9 @@ undef __cxa_finalize@GLIBC_2.2.5
 0000000000001000 _init
 ```
 
-##  print binary sections
+##  Print binary sections
 ```bash
-matteo@rust$ ./mdisasm -f /tmp/a.out -s
+matteo@rust$ ./disasm -f /tmp/a.out -s
 section .interp
 section .note.gnu.property
 section .note.gnu.build-id
@@ -145,9 +145,9 @@ section .symtab
 section .strtab
 section .shstrtab
 ```
-##  section dump
+## Example of a dump of the .comment section 
 ```bash
-matteo@rust:/tmp/disasm/target/debug$ ./mdisasm -f /tmp/a.out -S .comment
+matteo@rust$ ./disasm -f /tmp/a.out -S .comment
 Dumping '.comment' section
 00000000: 47 43 43 3a 20 28 44 65 62 69 61 6e 20 31 32 |GCC: (Debian 12|
 0000000f: 2e 32 2e 30 2d 31 34 2b 64 65 62 31 32 75 31 |.2.0-14+deb12u1|
