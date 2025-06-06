@@ -1,0 +1,15 @@
+# Output directory for compiled files
+/target/
+
+
+# Cargo package manager files
+**/Cargo.lock
+**/.cargo/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+
